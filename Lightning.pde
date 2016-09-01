@@ -3,7 +3,11 @@ int startY=0;
 int endX=(int)(Math.random()*401);
 int endY=0;
 float x=0;
-
+int startX2=(int)(Math.random()*401);
+int startY2=0;
+int endX2=(int)(Math.random()*401);
+int endY2=0;
+int y=(int)(Math.random()*225);
 void setup()
 {
   size(400,400);
@@ -12,6 +16,13 @@ void setup()
   fill(0,225,0);
   rect(0,300,400,100);
   strokeWeight(2);
+
+  while(true){
+
+  	draw();
+  	wait();
+  	redraw();
+  }
   }
 
 
@@ -19,7 +30,7 @@ void setup()
 void draw()
 {
 stroke((int)(Math.random()*75),(int)(Math.random()*100),(int)(Math.random()*125)+100);
-while(endY<=291&&mousePressed==true){
+while(endY<=291){
 
 
 	endX=startX+(int)((Math.random()*19)-9);
@@ -29,12 +40,23 @@ while(endY<=291&&mousePressed==true){
 	startY=endY;
 
 } 
+stroke(y,y,0);
+while(endY2<=291){
+
+
+	endX2=startX2+(int)((Math.random()*19)-9);
+	endY2=startY2+(int)(Math.random()*10);
+	line(startX2,startY2,endX2,endY2);
+	startX2=endX2;
+	startY2=endY2;
+
+} 
 noStroke();
 fill(100,100,100,x);
 rect(0,0,400,300);
 x+=1;
 }
-void mousePressed()
+void redraw()
 {
 background(100);	
 noStroke();
@@ -46,6 +68,20 @@ x=0;
  startY=0;
  endX=(int)(Math.random()*401);
  endY=0;
+ startX2=(int)(Math.random()*401);
+ startY2=0;
+ endX2=(int)(Math.random()*401);
+ endY2=0;
 }
 
  
+
+
+
+
+
+
+
+
+
+
